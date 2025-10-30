@@ -1,0 +1,3 @@
+- [x] Add opening div to index.html
+- [x] Add opening styles to style.css
+- [x] Add transition logic to script.js

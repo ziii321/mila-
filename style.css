@@ -1,0 +1,165 @@
+ /* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffc2cd 0%, #ff8fa3 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background hati kecil-kecil */
+.bg-hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+.bg-hearts::before,
+.bg-hearts::after {
+  content: '❤️';
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.15;
+  animation: float 15s infinite ease-in-out;
+}
+.bg-hearts::after {
+  content: '💖';
+  top: 30%;
+  left: 70%;
+  animation-duration: 20s;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-40px) rotate(20deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Card utama */
+.card {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #ff6b81;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+.photo:hover {
+  transform: scale(1.05);
+}
+
+.title {
+  color: #d63384;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.wish {
+  color: #495057;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.btn {
+  margin-top: 25px;
+  background: #ff6b81;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background: #e8436f;
+}
+
+/* Balon hati melayang */
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  font-size: 3rem;
+  animation: fly 10s infinite linear;
+}
+.x1 { left: 10%; animation-duration: 9s; }
+.x2 { left: 30%; animation-duration: 12s; }
+.x3 { left: 55%; animation-duration: 10s; }
+.x4 { left: 80%; animation-duration: 8s; }
+
+@keyframes fly {
+  0%   { transform: translateY(0) rotate(-5deg); }
+  50%  { transform: translateY(-100vh) rotate(5deg); }
+  100% { transform: translateY(-200vh) rotate(-5deg); }
+}
+
+/* Opening screen */
+.opening {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff8fa3 0%, #ffc2cd 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.opening h1 {
+  color: #fff;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  animation: bounce 1s infinite alternate;
+  margin-bottom: 20px;
+}
+
+.countdown {
+  color: #fff;
+  font-size: 5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
